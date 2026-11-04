@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA X1 | Smartwatch</title>
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #635bff;
+            --secondary-color: #17172b;
+            --background-color: #f5f6fa;
+            --card-color: #ffffff;
+            --text-color: #25253a;
+            --muted-color: #707080;
+            --accent-color: #e9e7ff;
+        }
+
+        /* Reset and box model */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h1 {
+            font-size: 26px;
+        }
+
+        header h1 span {
+            color: #a9a2ff;
+        }
+
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #a9a2ff;
+        }
+
+        /* Main section */
+        main {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 25px;
+        }
+
+        .product-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background: var(--card-color);
+            padding: 45px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        }
+
+        /* Product image area */
+        .product-image {
+            flex: 1;
+            min-width: 0;
+            min-height: 350px;
+            background: var(--accent-color);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .watch {
+            width: 145px;
+            height: 190px;
+            background: #20202b;
+            border: 8px solid #343442;
+            border-radius: 35px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .watch::before,
+        .watch::after {
+            content: "";
+            position: absolute;
+            width: 65px;
+            height: 75px;
+            background: #39394b;
+            left: 32px;
+            z-index: -1;
+        }
+
+        .watch::before {
+            bottom: 175px;
+            border-radius: 20px 20px 5px 5px;
+        }
+
+        .watch::after {
+            top: 175px;
+            border-radius: 5px 5px 20px 20px;
+        }
+
+        .watch-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #312b75, #635bff);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .watch-screen strong {
+            font-size: 30px;
+        }
+
+        .watch-screen span {
+            font-size: 12px;
+        }
+
+        /* Product description */
+        .product-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product-info h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .product-info p {
+            color: var(--muted-color);
+            margin-bottom: 20px;
+        }
+
+        .features {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .features li {
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Button and hover effect */
+        .product-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 13px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease,
+                        transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .product-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(99, 91, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 50px;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            main {
+                margin: 25px auto;
+            }
+
+            .product-section {
+                flex-direction: column;
+                padding: 25px;
+                gap: 30px;
+            }
+
+            .product-image {
+                width: 100%;
+                min-height: 300px;
+            }
+
+            .product-info {
+                width: 100%;
+            }
+
+            .product-info h2 {
+                font-size: 30px;
+            }
+
+            footer {
+                margin-top: 25px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            header h1 {
+                font-size: 23px;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .product-section {
+                padding: 18px;
+            }
+
+            .product-info h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Semantic Header -->
+    <header>
+        <h1>NOVA<span>TECH</span></h1>
+
+        <!-- Semantic Navigation -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#product">Products</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="home">
+
+        <!-- Product Showcase -->
+        <section class="product-section" id="product">
+
+            <!-- Product Image -->
+            <div class="product-image" role="img"
+                 aria-label="Illustration of a NOVA X1 smartwatch">
+                <div class="watch">
+                    <div class="watch-screen">
+                        <span>MONDAY</span>
+                        <strong>10:08</strong>
+                        <span>♥ 98 BPM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Information -->
+            <article class="product-info">
+                <span class="tag">NEW ARRIVAL</span>
+
+                <h2>Meet the NOVA X1 Smartwatch</h2>
+
+                <p>
+                    Experience the future on your wrist.
+                    The NOVA X1 combines elegant design,
+                    smart technology and powerful health
+                    tracking in one device.
+                </p>
+
+                <ul class="features" id="features">
+                    <li>AMOLED HD Display</li>
+                    <li>24/7 Health Monitoring</li>
+                    <li>7-Day Battery Life</li>
+                    <li>Water Resistant Design</li>
+                    <li>Bluetooth Calling</li>
+                </ul>
+
+                <div class="price">₹4,999</div>
+
+                <button class="product-button" type="button">
+                    Explore Product
+                </button>
+            </article>
+
+        </section>
+    </main>
+
+    <!-- Semantic Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 NOVATECH. All Rights Reserved.</p>
+        <p>Designed with HTML5 and CSS3 Flexbox.</p>
+    </footer>
+
+</body>
+</html>
